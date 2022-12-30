@@ -19,6 +19,7 @@ const initRPS = () => {
     const isUserWinner = userSelection.beats === computerSelection.name
     const isComputerWinner = computerSelection.beats === userSelection.name
     updateScores([userScoreElement, computerScoreElement], [isUserWinner, isComputerWinner])
+    renderRecentResults(userSelection, computerSelection, isUserWinner, isComputerWinner, resultsContainer)
   }
 }
 
@@ -42,7 +43,7 @@ const SELECTIONS = [
 
 const createRecentTemplate = (userSelection, computerSelection, isUserWinner = false, isComputerWinner = false) => {
   const userWinnerClassString = isUserWinner ? 'winner' : ''
-  const computerWinnerClassString = isUserWinner ? 'winner' : ''
+  const computerWinnerClassString = isComputerWinner ? 'winner' : ''
 
   return `
     <li class="rps__recent rps__results-columns">
@@ -57,6 +58,11 @@ const updateScores = (elementsList, isWinnerList) => {
     const currentScore = Number(element.textContent)
     element.textContent = currentScore + isWinnerList[index]
   })
+}
+
+const renderRecentResults = (userSelection, computerSelection, isUserWinner, isComputerWinner, resultsContainer) => {
+  const recentHTML = createRecentTemplate(userSelection, computerSelection, isUserWinner, isComputerWinner)
+  resultsContainer.innerHTML = recentHTML + resultsContainer.innerHTML
 }
 
 initRPS()
