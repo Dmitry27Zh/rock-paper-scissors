@@ -2,6 +2,9 @@
   --fz: min(2vw, 20px);
   --transition-duration: 0.3s;
   --transition-timing-function: ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
   padding: 2em 1em;
   font-size: var(--fz);
 }
@@ -20,7 +23,7 @@
   align-items: center;
   width: 100%;
   padding: var(--fz);
-  font-size: 10em;
+  font-size: 7em;
   background: none;
   border: none;
   cursor: pointer;
@@ -30,4 +33,50 @@
 .rps__selection-btn:hover,
 .rps__selection-btn:focus-visible {
   transform: scale(1.2);
+}
+
+.rps__results {
+  font-size: 2em;
+}
+
+.rps__results-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.rps__results-main {
+  padding-block: 1em;
+}
+
+.rps__results-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.rps__score {
+  font-size: 0.5em;
+  color: #333333;
+}
+
+.rps__results-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rps__recent {
+  padding-block: 0.7em;
+}
+
+.rps__results-selection {
+  opacity: 0.5;
+}
+
+.rps__results-selection.winner {
+  opacity: 1;
 }
