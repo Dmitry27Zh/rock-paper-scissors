@@ -1,0 +1,33 @@
+.rps {
+  --fz: min(2vw, 20px);
+  --transition-duration: 0.3s;
+  --transition-timing-function: ease;
+  padding: 2em 1em;
+  font-size: var(--fz);
+}
+
+.rps__selection-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rps__selection-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: var(--fz);
+  font-size: 10em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-duration) var(--transition-timing-function);
+}
+
+.rps__selection-btn:hover,
+.rps__selection-btn:focus-visible {
+  transform: scale(1.2);
+}

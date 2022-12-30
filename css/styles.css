@@ -1,3 +1,5 @@
+@import './modules/rps.css';
+
 *,
 *::before,
 *::after {
@@ -5,10 +7,12 @@
 }
 
 html {
+  height: 100%;
   font-size: 16px;
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -22,6 +26,8 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .visually-hidden {
